@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="col-lg-8 offset-lg-2">
+        <div class="card">
+            <div class="card-body text-center">
+                <span class="titulo"> Recibos </span>
+                <!--<button class="btn btn-success float-end" [routerLink]="['/crear-producto']">NUEVO</button> -->
+              
+                <table *ngIf="listEmpleados.length > 0" class="table table-striped mt-3 ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Mes</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Tipo de recibo</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Recibo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor = "let emp of listEmpleados">
+                        <td>{{ emp.recibo.anio }}</td>
+                        <td>{{ emp.recibo.mes }}</td>
+                        <td>{{ emp.recibo.fechaDePago }}</td>
+                        <td>{{ emp.recibo.tipoDeRecibo }}</td>
+                        <td>{{ emp.recibo.path }}</td>  
+                        <td>
+                      <!--<i [routerLink]="['/editar-producto',pdf._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                      <i (click)="eliminarEmpleado(pdf._id)"  class="fa-solid fa-trash text-danger"></i>-->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h5 style="text-align: start; margin-top: 10px;" *ngIf="listEmpleados.length == 0"> No hay productos para mostrar </h5>
+            </div>
+        </div>
+    </div>
